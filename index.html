@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraineBarcelona - Votre spécialiste en graines européennes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(46,125,50,0.9) 0%, rgba(27,94,32,0.9) 100%);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .product-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .newsletter-bg {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1516253593875-bd7ba052fbcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .animate-bounce-slow {
+            animation: bounce-slow 3s infinite;
+        }
+        
+        @keyframes bounce-slow {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-seedling text-green-600 text-2xl"></i>
+                <h1 class="text-xl font-bold text-gray-800">Graine<span class="text-green-600">Barcelona</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#accueil" class="text-gray-700 hover:text-green-600 font-medium">Accueil</a>
+                <a href="#produits" class="text-gray-700 hover:text-green-600 font-medium">Nos Graines</a>
+                <a href="#categories" class="text-gray-700 hover:text-green-600 font-medium">Catégories</a>
+                <a href="#apropos" class="text-gray-700 hover:text-green-600 font-medium">À Propos</a>
+                <a href="#contact" class="text-gray-700 hover:text-green-600 font-medium">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button class="text-gray-600 hover:text-green-600">
+                    <i class="fas fa-search text-xl"></i>
+                </button>
+                <button class="text-gray-600 hover:text-green-600 relative">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                </button>
+                <button class="md:hidden text-gray-600" id="menu-toggle">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white py-2 px-4 shadow-md" id="mobile-menu">
+            <a href="#accueil" class="block py-2 text-gray-700 hover:text-green-600">Accueil</a>
+            <a href="#produits" class="block py-2 text-gray-700 hover:text-green-600">Nos Graines</a>
+            <a href="#categories" class="block py-2 text-gray-700 hover:text-green-600">Catégories</a>
+            <a href="#apropos" class="block py-2 text-gray-700 hover:text-green-600">À Propos</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-green-600">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Graines de qualité pour toute l'Europe</h2>
+                <p class="text-xl mb-8">Découvrez notre sélection exceptionnelle de graines biologiques, cultivées avec passion à Barcelone et expédiées dans toute l'Europe.</p>
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                    <a href="#produits" class="bg-white text-green-700 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 text-center transition duration-300">Voir nos produits</a>
+                    <a href="#categories" class="border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-green-700 text-center transition duration-300">Explorer les catégories</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center animate-bounce-slow">
+                <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Graines biologiques" class="rounded-lg shadow-xl max-w-md w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg bg-gray-50 hover:bg-green-50 transition duration-300">
+                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-leaf text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">100% Biologique</h3>
+                    <p class="text-gray-600">Toutes nos graines sont cultivées sans pesticides ni OGM, dans le respect de l'environnement.</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-gray-50 hover:bg-green-50 transition duration-300">
+                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-truck text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Livraison Européenne</h3>
+                    <p class="text-gray-600">Expédition rapide et sécurisée dans toute l'Europe, avec suivi de commande.</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-gray-50 hover:bg-green-50 transition duration-300">
+                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-seedling text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Variétés Rares</h3>
+                    <p class="text-gray-600">Découvrez des espèces uniques et des variétés anciennes difficiles à trouver ailleurs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Nos Catégories de Graines</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explorez notre large sélection de graines adaptées à tous les jardiniers, du débutant au professionnel.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="#" class="category-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-apple-alt text-6xl text-green-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-gray-800">Fruits</h3>
+                        <p class="text-gray-600">Graines d'arbres fruitiers et petits fruits pour votre verger.</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="category-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-yellow-100 flex items-center justify-center">
+                        <i class="fas fa-carrot text-6xl text-yellow-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-gray-800">Légumes</h3>
+                        <p class="text-gray-600">Variétés anciennes et modernes pour votre potager.</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="category-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-spa text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-gray-800">Plantes Aromatiques</h3>
+                        <p class="text-gray-600">Herbes culinaires et médicinales pour parfumer vos plats.</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="category-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <i class="fas fa-tree text-6xl text-purple-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-gray-800">Arbres & Arbustes</h3>
+                        <p class="text-gray-600">Pour créer des haies et embellir votre espace extérieur.</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block bg-green-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-green-700 transition duration-300">
+                    Voir toutes les catégories <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="produits" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Nos Graines Populaires</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Découvrez nos best-sellers, sélectionnés pour leur qualité et leur taux de germination exceptionnel.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tomates anciennes" class="w-full h-48 object-cover">
+                        <span class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">BIO</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-gray-800">Tomate Ancienne "Cœur de Bœuf"</h3>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Nouveau</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Variété ancienne très productive, fruits charnus et savoureux.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-green-600">4,90€</span>
+                            <button class="bg-green-600 text-white p-2 rounded-full hover:bg-green-700 transition duration-300">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Basilic" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Basilic Grand Vert</h3>
+                        <p class="text-gray-600 text-sm mb-4">Aromatique incontournable de la cuisine méditerranéenne.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-green-600">3,50€</span>
+                            <button class="bg-green-600 text-white p-2 rounded-full hover:bg-green-700 transition duration-300">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Fraise" class="w-full h-48 object-cover">
+                        <span class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">BIO</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Fraise 'Mara des Bois'</h3>
+                        <p class="text-gray-600 text-sm mb-4">Saveur proche de la fraise des bois
+</body>
+</html>
